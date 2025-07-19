@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(python3:*)",
+      "Bash(firebase deploy:*)",
+      "Bash(git clone:*)",
+      "Bash(rm:*)"
+    ],
+    "deny": []
+  }
+}

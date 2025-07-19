@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn AI with Edu - Guides, tutorials, and resources for developers. Subscribe to my YouTube channel for coding content!">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://tuaregsai.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tuaregs AI">
+    <meta property="og:description" content="Learn AI with Edu - Guides, tutorials, and resources for developers. Subscribe to my YouTube channel for coding content!">
+    <meta property="og:image" content="https://tuaregsai.com/og-image.jpg">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="tuaregsai.com">
+    <meta property="twitter:url" content="https://tuaregsai.com/">
+    <meta name="twitter:title" content="Tuaregs AI">
+    <meta name="twitter:description" content="Learn AI with Edu - Guides, tutorials, and resources for developers. Subscribe to my YouTube channel for coding content!">
+    <meta name="twitter:image" content="https://tuaregsai.com/og-image.jpg">
+    
+    <title>Learn AI - This is Tuaregs AI</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #f59e0b;
+            --accent: #10b981;
+            --youtube: #ff0000;
+            --youtube-hover: #cc0000;
+            --twitter: #1da1f2;
+            --twitter-hover: #0d8bd9;
+            --tiktok: #ff0050;
+            --tiktok-hover: #e6003d;
+            --bg-primary: #0f0f23;
+            --bg-secondary: #1a1a3a;
+            --bg-card: rgba(255, 255, 255, 0.05);
+            --bg-card-hover: rgba(255, 255, 255, 0.1);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.8);
+            --text-muted: rgba(255, 255, 255, 0.6);
+            --border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-lg: 0 35px 60px -12px rgba(0, 0, 0, 0.4);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            min-height: 100vh;
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        /* Animated background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+            animation: backgroundMove 20s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes backgroundMove {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-youtube {
+            background: linear-gradient(135deg, var(--youtube), var(--youtube-hover));
+            color: white;
+        }
+
+        .btn-youtube:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-twitter {
+            background: linear-gradient(135deg, var(--twitter), var(--twitter-hover));
+            color: white;
+        }
+
+        .btn-twitter:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-tiktok {
+            background: linear-gradient(135deg, var(--tiktok), var(--tiktok-hover));
+            color: white;
+        }
+
+        .btn-tiktok:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 1000px;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .guide-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guide-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .guide-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .guide-card:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .guide-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .guide-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .guide-description {
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            
+            .guides-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-element" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+        <div class="floating-element" style="top: 60%; left: 80%; animation-delay: 2s;"></div>
+        <div class="floating-element" style="top: 30%; left: 70%; animation-delay: 4s;"></div>
+        <div class="floating-element" style="top: 80%; left: 20%; animation-delay: 1s;"></div>
+        <div class="floating-element" style="top: 40%; left: 90%; animation-delay: 3s;"></div>
+    </div>
+
+    <div class="container">
+        <div class="hero">
+            <h1 class="hero-title">Hey, what's up?</h1>
+            <p class="hero-subtitle">
+                I'm Edu, and this is Tuaregs AI website. Welcome to my corner of the internet where we explore AI, coding, and everything in between! 🚀
+            </p>
+        </div>
+
+        <div class="cta-buttons">
+            <a href="https://twitter.com/itseduvieira" target="_blank" class="btn btn-twitter">
+                🐦 Twitter
+            </a>
+            <a href="https://youtube.com/@itseduvieira" target="_blank" class="btn btn-youtube">
+                📺 YouTube
+            </a>
+            <a href="https://tiktok.com/@itseduvieira" target="_blank" class="btn btn-tiktok">
+                🎵 TikTok
+            </a>
+            <a href="guide/" class="btn btn-primary">
+                🤖 AI Guide
+            </a>
+        </div>
+
+        <div class="guides-grid">
+            <a href="guides/" class="guide-card">
+                <span class="guide-icon">📚</span>
+                <h3 class="guide-title">All Guides</h3>
+                <p class="guide-description">Comprehensive collection of learning resources and tutorials covering AI, development tools, and programming concepts</p>
+            </a>
+            
+            <a href="git-fundamentals/" class="guide-card">
+                <span class="guide-icon">⚡</span>
+                <h3 class="guide-title">Git Fundamentals</h3>
+                <p class="guide-description">Master version control for your coding projects. Learn Git from basics to advanced workflows</p>
+            </a>
+            
+            <a href="vibe-coding-with-cursor/" class="guide-card">
+                <span class="guide-icon">🎯</span>
+                <h3 class="guide-title">Cursor Coding</h3>
+                <p class="guide-description">Learn to code with AI assistance using Cursor IDE. Boost your productivity with intelligent code completion</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
